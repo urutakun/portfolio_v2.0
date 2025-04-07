@@ -1,0 +1,39 @@
+@import "tailwindcss";
+
+@theme {
+    --color-cwhite: oklch(0.97 0.0057 84.57);
+    --color-cred: oklch(0.66 0.232 34.58);
+    --color-cblack: oklch(0 0 0);
+    --color-cgray: oklch(0.5 0 0);
+    --font-sequelBook: "Sequel Sans Book Disp";
+    --font-sequelRoman: "Sequel Sans Roman Disp";
+    --font-space-mono: "Space Mono";
+}
+
+@layer utilities {
+    .ctransition {
+        @apply ease-in-out duration-200;
+    }
+    .text-reveal {
+       @apply overflow-hidden;
+    }
+}
+
+
+@font-face {
+    font-family: "Sequel Sans Book Disp";
+    src: url("/fonts/Sequel/WOFF/Sequel Sans Book Disp.woff") format("woff"),
+         url("/fonts/Sequel/WOFF2/Sequel Sans Book Disp.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: "Sequel Sans Roman Disp";
+    src: url("/fonts/Sequel/WOFF/Sequel Sans Roman Disp.woff") format("woff"),
+         url("/fonts/Sequel/WOFF2/Sequel Sans Roman Disp.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: "Space Mono";
+    src: url("/fonts/Space_Mono/WOFF/SpaceMono-Regular.woff") format("woff"),
+         url("/fonts/Space_Mono/WOFF2/SpaceMono-Regular.woff2") format("woff2");
+}
