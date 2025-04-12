@@ -155,7 +155,6 @@ const Nav = () => {
                                 </div>
                                 <div className="contact flex flex-col space-y-2">
                                     <span>waltergagate1001@gmail.com</span>
-                                    <span>0945-837-8967</span>
                                 </div>
                         </div>
                     </div>

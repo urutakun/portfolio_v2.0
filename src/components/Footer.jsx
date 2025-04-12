@@ -14,6 +14,7 @@ const Footer = ({socs}) => {
                             {socs.map((soc) => (
                                 <a href={soc.url} className='cursor-none'>{soc.name}</a>
                             ))}
+                            <span>waltergagate1001@gmail.com</span>
                         </div>
                     </div>
                 </div>
