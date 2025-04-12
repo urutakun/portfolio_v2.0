@@ -4,9 +4,10 @@ import Lenis from 'lenis'
 const LenisWrapper = ({ children }) => {
     useEffect(() => {
         const lenis = new Lenis({
-            lerp: 0.1,
+            lerp: 0.05,
             smooth: true,
-            direction: 'vertical'
+            direction: 'vertical',
+            wheelMultiplier: 0.4,
         });
 
         const raf = (time) => {

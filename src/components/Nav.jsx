@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from "react";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { Link } from "react-router-dom";
+import SplitType from "split-type";
 gsap.registerPlugin(useGSAP);
 
 const Nav = () => {
@@ -26,7 +27,6 @@ const Nav = () => {
     }, [])
 
     useGSAP(() => {
-        gsap.set('.link', { y: 100})
         tl.current = gsap.timeline({ paused: true });
 
         tl.current.to(navContainer.current, {
@@ -35,12 +35,15 @@ const Nav = () => {
             ease: "power4.inOut"
         })
 
+        gsap.set('.link', { y: "100%"})
+
+
         tl.current.to('.link', {
             y: 0,
             duration: 1,
             stagger: 0.1,
             ease: "power3.inOut",
-            delay: -0.90
+            delay: -0.9
         })
     });
 
@@ -56,19 +59,19 @@ const Nav = () => {
 
     const links = [
         {
-            url: '/',
+            url: 'home',
             name: 'Home',
         },
         {
-            url: '/work',
-            name: 'Work',
-        },
-        {
-            url: '/about',
+            url: 'about',
             name: 'About',
         },
         {
-            url: '/contact',
+            url: 'work',
+            name: 'Work',
+        },
+        {
+            url: 'contact',
             name: 'Contact',
         },
     ];
@@ -93,13 +96,13 @@ const Nav = () => {
                 WebkitMaskImage: 'linear-gradient(to bottom, black 70%, transparent 100%)',
                 maskImage: 'linear-gradient(to bottom, black 70%, transparent 100%)',
             }}>
-                <div className="nav__left flex flex-col">
+                <div className="nav__left flex items-center space-x-2">
+                    <div className="">
+                        <img src="/assets/y2k.avif" alt="logo" className="w-[1.5rem] lg:w-[2rem]"/>
+                    </div>
                     <div className="coordinates hidden lg:block space-x-2">
                         <span>X&#91;{xCoordinates}&#93;</span>
                         <span>Y&#91;{yCoordinates}&#93;</span>
-                    </div>
-                    <div className="lg:hidden">
-                        <img src="/assets/y2k.avif" alt="logo" className="w-[1.5rem]"/>
                     </div>
                 </div>
                 <div className="nav__right" >
@@ -109,7 +112,7 @@ const Nav = () => {
                 </div>
             </div>
             <div className="nav__overlay fixed top-0 left-0 w-full h-screen bg-cred z-50" style={{ clipPath: "polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%)"}} ref={navContainer}>
-                <div className="absolute inset-0 z-0 grid grid-cols-3 ">
+                <div className="absolute inset-0 z-0 grid grid-cols-3 px-6">
                     <div className="border-r border-dashed border-cblack/20"></div>
                     <div className="border-r border-dashed border-cblack/20"></div>
                 </div>
@@ -125,15 +128,15 @@ const Nav = () => {
                                 <span>WALTER_GAGATE</span>
                                 <span>_PH</span>
                             </div>
-                            <div className="ln flex flex-col text-7xl lg:text-8xl font-sequelRoman space-y-2 col-span-2 lg:col-span-1">
+                            <div className="ln flex flex-col text-7xl md:text-[8rem] lg:text-8xl font-sequelRoman space-y-2 col-span-2 lg:col-span-1">
                                 {links.map((link, idx) => (
                                     <div className="menu-link px-2 w-max"
                                     key={idx}
                                     style={{ clipPath: "polygon(0 0, 100% 0, 100% 100%, 0% 100%)"}}
                                     >
                                         <div className="link relative">
-                                            <Link to={link.url} className="hover:underline ctransition cursor-none tracking-tighter"
-                                            onClick={() => {tl.current.reverse(); setIsOpen(false)} }>{link.name}</Link>
+                                            <a href={`#${link.url}`} className="cursor-none tracking-tighter"
+                                            onClick={() => {tl.current.reverse(); setIsOpen(false)} }>{link.name}</a>
                                         </div>
                                     </div>
                                 ))}
@@ -142,7 +145,7 @@ const Nav = () => {
                         <div className="nav__right text-xs lg:text-base col-span-2 lg:col-span-1 flex flex-col lg:flex-row lg:justify-between lg:items-end h-full space-y-8 lg:space-y-0">
                                 <div className="links flex flex-col space-y-2">
                                 {socs.map((link, idx) => (
-                                    <a key={idx} href={link.url} className="flex space-x-2 cursor-none">
+                                    <a key={idx} href={link.url} className="flex items-end space-x-2 cursor-none">
                                         <span>{link.name}</span>
                                         <div className="arrow__icon">
                                             <svg xmlns="http://www.w3.org/2000/svg" className="w-6 rotate-45" viewBox="0 0 512 512"><path fill="currentColor" d="M390.624 150.625L256 16L121.376 150.625l22.628 22.627l95.997-95.998v417.982h32V77.257l95.995 95.995z"/></svg>

@@ -5,8 +5,9 @@
     --color-cred: oklch(0.66 0.232 34.58);
     --color-cblack: oklch(0 0 0);
     --color-cgray: oklch(0.5 0 0);
-    --font-sequelBook: "Sequel Sans Book Disp";
     --font-sequelRoman: "Sequel Sans Roman Disp";
+    --font-sequelMed: "Sequel Sans Medium Disp";
+    --font-sequelSemi: "Sequel Sans Semi Bold Disp";
     --font-space-mono: "Space Mono";
 }
 
@@ -14,22 +15,32 @@
     .ctransition {
         @apply ease-in-out duration-200;
     }
+
     .text-reveal {
        @apply overflow-hidden;
     }
 }
 
-
-@font-face {
-    font-family: "Sequel Sans Book Disp";
-    src: url("/fonts/Sequel/WOFF/Sequel Sans Book Disp.woff") format("woff"),
-         url("/fonts/Sequel/WOFF2/Sequel Sans Book Disp.woff2") format("woff2");
+html {
+    scroll-behavior: smooth;
 }
 
 @font-face {
     font-family: "Sequel Sans Roman Disp";
     src: url("/fonts/Sequel/WOFF/Sequel Sans Roman Disp.woff") format("woff"),
          url("/fonts/Sequel/WOFF2/Sequel Sans Roman Disp.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: "Sequel Sans Medium Disp";
+    src: url("/fonts/Sequel/WOFF/Sequel Sans Medium Disp.woff") format("woff"),
+         url("/fonts/Sequel/WOFF2/Sequel Sans Medium Disp.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: "Sequel Sans Semi Bold Disp";
+    src: url("/fonts/Sequel/WOFF/Sequel Sans Semi Bold Disp.woff") format("woff"),
+         url("/fonts/Sequel/WOFF2/Sequel Sans Semi Bold Disp.woff2") format("woff2");
 }
 
 @font-face {
