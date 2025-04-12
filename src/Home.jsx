@@ -237,7 +237,7 @@ function Home() {
                                 <div className="grid grid-cols-2 text-xl md:text-3xl md:mt-6 lg:mt-0">
                                     <div className="soc-links hidden md:block">
                                         {socs.map((soc) => (
-                                            <a href={soc.url} className='flex items-center space-x-1 overflow-hidden'>
+                                            <a href={soc.url} className='flex items-center space-x-1 overflow-hidden cursor-none'>
                                                 <span className='inline-block text'>{soc.name}</span>
                                                 <div className="arrow">
                                                     <svg xmlns="http://www.w3.org/2000/svg" className='size-10 md:size-12 rotate-45' viewBox="0 0 24 24"><path fill="currentColor" d="M13 7.828V20h-2V7.828l-5.364 5.364l-1.414-1.414L12 4l7.778 7.778l-1.414 1.414z"/></svg>
